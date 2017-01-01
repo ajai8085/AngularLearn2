@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './products/product-list-component';
+import {ProductFilterPipe} from './products/product-filter.pipe';
+import{StarComponent} from './shared/start.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductListComponent,
+    ProductFilterPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
