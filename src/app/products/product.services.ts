@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ProductService {
 
-    private _serviceUrl: string = "http://127.0.0.1:8080/products.json"
+    private _serviceUrl: string = "http://127.0.0.1:8080/products.json" //copy the products.json file in this folder under a folder somewhere else and run : http-server --cors
 
     constructor(private _http: Http) {
 
@@ -25,6 +25,11 @@ export class ProductService {
     private handleError(error: Response) {
         console.log(error);
         return Observable.throw(error.json().error || 'Service Error');
+    }
+
+      getProduct(id: number): Observable<IProduct> {
+        return this.getProducts()
+            .map((products: IProduct[]) => products.find(p => p.productId == id));
     }
 
 }
