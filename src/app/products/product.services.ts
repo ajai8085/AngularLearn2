@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { IProduct } from "./product";
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'; //only execute the javascripts only .
+import 'rxjs/add/operator/map'; //only execute the javascripts.
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 

@@ -2,25 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './products/product-list-component';
-import {ProductFilterPipe} from './products/product-filter.pipe';
-import{StarComponent} from './shared/start.component';
+
+import { routing } from './app.routing.module';
+import { ProductModule } from './products/product.module';
+import { WelcomeComponent } from './home/welcome.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent,
-    ProductFilterPipe,
-    StarComponent
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,    
+    ProductModule,
+    routing,
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
